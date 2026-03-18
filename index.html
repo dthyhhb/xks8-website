@@ -464,7 +464,7 @@
   .news-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .3s var(--transition);border:1px solid var(--border)}
   .news-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-warm)}
   .news-cover{height:205px;overflow:hidden;position:relative}
-  .news-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--transition)}
+  .news-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--transition);pointer-events:none}
   .news-card:hover .news-cover img{transform:scale(1.07)}
   .news-cat{position:absolute;top:14px;left:14px;background:var(--rock-mid);color:#fff;padding:4px 13px;border-radius:12px;font-size:11.5px;font-weight:600;letter-spacing:0.5px}
   .news-body{padding:22px}
@@ -3870,6 +3870,7 @@ function toggleXuankongDetail(e){
     document.querySelectorAll('.news-read').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
+        e.stopPropagation();
         const card = e.target.closest('.news-card');
         if (!card) return;
 
@@ -3878,7 +3879,29 @@ function toggleXuankongDetail(e){
         const index = Array.from(cards).indexOf(card);
         const articleIds = ['news1', 'news2', 'news3'];
 
+        console.log('阅读全文按钮被点击，卡片索引:', index);
         if (index >= 0 && index < articleIds.length) {
+          console.log('打开文章:', articleIds[index]);
+          openNewsModal(articleIds[index]);
+        }
+      });
+    });
+
+    // 为新闻标题链接也添加点击事件
+    document.querySelectorAll('.news-title a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const card = e.target.closest('.news-card');
+        if (!card) return;
+
+        const cards = document.querySelectorAll('.news-card');
+        const index = Array.from(cards).indexOf(card);
+        const articleIds = ['news1', 'news2', 'news3'];
+
+        console.log('新闻标题被点击，卡片索引:', index);
+        if (index >= 0 && index < articleIds.length) {
+          console.log('打开文章:', articleIds[index]);
           openNewsModal(articleIds[index]);
         }
       });
