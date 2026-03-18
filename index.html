@@ -3462,27 +3462,27 @@ function toggleXuankongDetail(e){
 
   async function fetchWeather(){
     try {
-      // 使用 wttr.in JSON API，浑源县用拼音
-      const res = await fetch('https://wttr.in/Hunyuan,Shanxi?format=j1', {signal: AbortSignal.timeout(5000)});
+      // 使用 Open-Meteo 免费天气 API（无需密钥，更稳定）
+      // 浑源县坐标：39.69°N, 113.69°E
+      const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=39.69&longitude=113.69&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,apparent_temperature&timezone=Asia%2FShanghai', {signal: AbortSignal.timeout(5000)});
       if(!res.ok) throw new Error('weather api error');
       const data = await res.json();
-      const cur = data.current_condition[0];
-      const temp = cur.temp_C;
-      const feelsLike = cur.FeelsLikeC;
-      const humidity = cur.humidity;
-      const windKm = cur.windspeedKmph;
-      const code = parseInt(cur.weatherCode);
+      const cur = data.current;
+
+      const temp = Math.round(cur.temperature_2m);
+      const feelsLike = Math.round(cur.apparent_temperature);
+      const humidity = cur.relative_humidity_2m;
+      const windKm = Math.round(cur.wind_speed_10m);
+      const code = cur.weather_code;
       const icon = weatherIconMap[code] || '🌤️';
-      const descArr = cur.weatherDesc;
-      const descEn = descArr && descArr[0] ? descArr[0].value : '';
-      // 简单英译中
-      const descZh = descEn.toLowerCase().includes('snow') ? '雪' :
-                     descEn.toLowerCase().includes('rain') ? '有雨' :
-                     descEn.toLowerCase().includes('cloud') ? '多云' :
-                     descEn.toLowerCase().includes('sun') || descEn.toLowerCase().includes('clear') ? '晴' :
-                     descEn.toLowerCase().includes('fog') ? '有雾' :
-                     descEn.toLowerCase().includes('thunder') ? '雷雨' :
-                     descEn.toLowerCase().includes('overcast') ? '阴天' : ''; 
+      const descZh = code === 0 ? '晴天' :
+                     code === 1 ? '多云' :
+                     code === 2 ? '多云' :
+                     code === 3 ? '阴天' :
+                     (code >= 45 && code <= 48) ? '有雾' :
+                     (code >= 51 && code <= 67) ? '下雨' :
+                     (code >= 71 && code <= 77) ? '下雪' :
+                     '多云'; 
 
       document.getElementById('weather-icon').textContent = icon;
       document.getElementById('weather-temp').innerHTML = `<strong style="font-size:28px;font-weight:900">${temp}°C</strong>${descZh ? ' · '+descZh : ''}`;
