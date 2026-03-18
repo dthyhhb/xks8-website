@@ -3839,6 +3839,8 @@ function toggleXuankongDetail(e){
 
   /* ── 新闻详情模态框控制 ── */
   (function(){
+    console.log('新闻模态框模块初始化...');
+
     const newsModalOverlay = document.getElementById('news-modal-overlay');
     const newsModalClose = document.getElementById('news-modal-close');
     const newsModalImg = document.getElementById('news-modal-img');
@@ -3847,9 +3849,23 @@ function toggleXuankongDetail(e){
     const newsModalMeta = document.getElementById('news-modal-meta');
     const newsModalContent = document.getElementById('news-modal-content');
 
+    console.log('新闻模态框元素:', {
+      overlay: newsModalOverlay,
+      close: newsModalClose,
+      img: newsModalImg,
+      cat: newsModalCat,
+      title: newsModalTitle,
+      meta: newsModalMeta,
+      content: newsModalContent
+    });
+
     function openNewsModal(articleId) {
+      console.log('打开新闻模态框，文章ID:', articleId);
       const article = NEWS_ARTICLES[articleId];
-      if (!article) return;
+      if (!article) {
+        console.error('文章不存在:', articleId);
+        return;
+      }
 
       newsModalImg.src = article.image;
       newsModalCat.textContent = article.category;
@@ -3859,49 +3875,62 @@ function toggleXuankongDetail(e){
 
       newsModalOverlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+      console.log('新闻模态框已打开');
     }
 
     function closeNewsModal() {
+      console.log('关闭新闻模态框');
       newsModalOverlay.classList.remove('open');
       document.body.style.overflow = '';
     }
 
     // 为所有"阅读全文"按钮添加点击事件
-    document.querySelectorAll('.news-read').forEach(btn => {
+    const readButtons = document.querySelectorAll('.news-read');
+    console.log('找到"阅读全文"按钮数量:', readButtons.length);
+
+    readButtons.forEach((btn, i) => {
       btn.addEventListener('click', e => {
+        console.log('阅读全文按钮被点击 (索引:', i, ')');
         e.preventDefault();
         e.stopPropagation();
         const card = e.target.closest('.news-card');
-        if (!card) return;
+        if (!card) {
+          console.error('找不到新闻卡片');
+          return;
+        }
 
-        // 根据卡片的位置判断是哪篇文章
         const cards = document.querySelectorAll('.news-card');
         const index = Array.from(cards).indexOf(card);
         const articleIds = ['news1', 'news2', 'news3'];
 
-        console.log('阅读全文按钮被点击，卡片索引:', index);
+        console.log('卡片索引:', index, '文章ID:', articleIds[index]);
         if (index >= 0 && index < articleIds.length) {
-          console.log('打开文章:', articleIds[index]);
           openNewsModal(articleIds[index]);
         }
       });
     });
 
     // 为新闻标题链接也添加点击事件
-    document.querySelectorAll('.news-title a').forEach(link => {
+    const titleLinks = document.querySelectorAll('.news-title a');
+    console.log('找到新闻标题链接数量:', titleLinks.length);
+
+    titleLinks.forEach((link, i) => {
       link.addEventListener('click', e => {
+        console.log('新闻标题被点击 (索引:', i, ')');
         e.preventDefault();
         e.stopPropagation();
         const card = e.target.closest('.news-card');
-        if (!card) return;
+        if (!card) {
+          console.error('找不到新闻卡片');
+          return;
+        }
 
         const cards = document.querySelectorAll('.news-card');
         const index = Array.from(cards).indexOf(card);
         const articleIds = ['news1', 'news2', 'news3'];
 
-        console.log('新闻标题被点击，卡片索引:', index);
+        console.log('卡片索引:', index, '文章ID:', articleIds[index]);
         if (index >= 0 && index < articleIds.length) {
-          console.log('打开文章:', articleIds[index]);
           openNewsModal(articleIds[index]);
         }
       });
@@ -3917,6 +3946,8 @@ function toggleXuankongDetail(e){
         closeNewsModal();
       }
     });
+
+    console.log('新闻模态框模块初始化完成');
   })();
 
 })();
