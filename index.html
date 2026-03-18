@@ -468,9 +468,8 @@
   .news-card:hover .news-cover img{transform:scale(1.07)}
   .news-cat{position:absolute;top:14px;left:14px;background:var(--rock-mid);color:#fff;padding:4px 13px;border-radius:12px;font-size:11.5px;font-weight:600;letter-spacing:0.5px}
   .news-body{padding:22px}
-  .news-title{font-size:15.5px;font-weight:700;line-height:1.6;margin-bottom:10px;color:var(--text-primary);font-family:var(--serif)}
-  .news-title a{text-decoration:none;color:inherit;transition:.2s}
-  .news-title a:hover{color:var(--rock-warm)}
+  .news-title{font-size:15.5px;font-weight:700;line-height:1.6;margin-bottom:10px;color:var(--text-primary);font-family:var(--serif);cursor:default}
+  .news-title:hover{color:var(--rock-warm)}
   .news-excerpt{font-size:13px;color:var(--text-muted);line-height:1.8;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .news-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border-light);padding-top:13px}
   .news-author{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-light)}
@@ -478,141 +477,54 @@
   .news-read{font-size:12px;color:var(--rock-warm);font-weight:600;text-decoration:none;letter-spacing:0.3px}
   .news-read:hover{text-decoration:underline}
 
-  /* ===== 特产商城 ===== */
-  .shop-filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
-  .shop-filter-btn{padding:8px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .22s var(--transition)}
-  .shop-filter-btn.active,.shop-filter-btn:hover{background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;border-color:transparent;box-shadow:0 3px 12px rgba(122,78,36,0.28)}
-  .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .product{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .3s var(--transition);border:1px solid var(--border);cursor:pointer}
-  .product:hover{transform:translateY(-6px);box-shadow:var(--shadow-warm)}
-  .product-cover{height:200px;overflow:hidden;position:relative}
-  .product-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--transition)}
-  .product:hover .product-cover img{transform:scale(1.09)}
-  .p-badge{position:absolute;top:10px;left:10px;padding:4px 11px;border-radius:10px;font-size:11px;font-weight:700;letter-spacing:0.3px}
-  .p-hot{background:#b5451b;color:#fff}
-  .p-new{background:#1d6ea6;color:#fff}
-  .p-organic{background:#3d6b28;color:#fff}
-  .p-recommend{background:var(--rock-mid);color:#fff}
-  .product-body{padding:18px}
-  .product-name{font-size:14.5px;font-weight:700;margin-bottom:7px;color:var(--text-primary);font-family:var(--serif)}
-  .product-desc{font-size:12px;color:var(--text-light);line-height:1.7;margin-bottom:14px;min-height:38px}
-  .product-foot{display:flex;justify-content:space-between;align-items:center}
-  .price-wrap .price{font-size:22px;font-weight:900;color:#b5451b}
-  .price-wrap .price small{font-size:13px}
-  .price-wrap .ori{font-size:12px;color:#ccc;text-decoration:line-through;margin-left:6px}
-  .btn-cart{background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;padding:9px 18px;border-radius:22px;font-size:12px;font-weight:600;border:none;cursor:pointer;transition:all .22s var(--transition);letter-spacing:0.3px}
-  .btn-cart:hover{background:linear-gradient(135deg,var(--rock-dark),var(--rock-mid));transform:scale(1.04);box-shadow:0 4px 14px rgba(74,46,20,0.32)}
-  .btn-cart.added{background:linear-gradient(135deg,#3d6b28,#5a9e3a)!important}
-
-  /* 购物车浮窗 */
-  .cart-fab{position:fixed;bottom:88px;right:28px;z-index:300;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;font-size:22px;box-shadow:0 4px 18px rgba(74,46,20,0.42);transition:all .25s var(--transition);display:flex;align-items:center;justify-content:center}
-  .cart-fab:hover{transform:scale(1.12);box-shadow:0 8px 26px rgba(74,46,20,0.5)}
-  .cart-badge{position:absolute;top:-4px;right:-4px;background:#e53935;color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;border:2px solid #fff;display:none}
-
-  /* 购物车抽屉 */
-  .cart-drawer{position:fixed;right:0;top:0;height:100%;width:380px;max-width:95vw;background:#fff;z-index:500;box-shadow:-8px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
-  .cart-drawer.open{transform:translateX(0)}
-  .cart-header{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-  .cart-header h3{font-size:17px;font-weight:800;color:var(--text-primary);font-family:var(--serif)}
-  .cart-close{background:var(--bg-2);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s}
-  .cart-close:hover{background:var(--bg-3)}
-  .cart-items{flex:1;overflow-y:auto;padding:16px 22px}
-  .cart-empty{text-align:center;padding:60px 0;color:var(--text-light);font-size:14px}
-  .cart-empty .empty-icon{font-size:48px;margin-bottom:12px}
-  .cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border-light)}
-  .cart-item-img{width:72px;height:72px;border-radius:10px;object-fit:cover;flex-shrink:0;border:1px solid var(--border)}
-  .cart-item-info{flex:1;min-width:0}
-  .cart-item-name{font-size:13.5px;font-weight:700;color:var(--text-primary);margin-bottom:4px;font-family:var(--serif)}
-  .cart-item-spec{font-size:11.5px;color:var(--text-light);margin-bottom:8px}
-  .cart-item-row{display:flex;align-items:center;justify-content:space-between}
-  .cart-item-price{font-size:16px;font-weight:900;color:#b5451b}
-  .qty-ctrl{display:flex;align-items:center;gap:0;border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
-  .qty-btn{width:28px;height:28px;border:none;background:#fff;cursor:pointer;font-size:16px;font-weight:700;color:var(--rock-warm);display:flex;align-items:center;justify-content:center;transition:background .2s}
-  .qty-btn:hover{background:var(--bg-2)}
-  .qty-num{width:32px;text-align:center;font-size:13px;font-weight:700;color:var(--text-primary)}
-  .cart-item-del{background:none;border:none;cursor:pointer;color:#ccc;font-size:16px;padding:4px;transition:color .2s;flex-shrink:0}
-  .cart-item-del:hover{color:#e53935}
-  .cart-footer{padding:18px 22px;border-top:1px solid var(--border);flex-shrink:0;background:#fff}
-  .cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-  .cart-total-label{font-size:14px;color:var(--text-muted)}
-  .cart-total-price{font-size:26px;font-weight:900;color:#b5451b}
-  .cart-total-price small{font-size:14px}
-  .btn-checkout{width:100%;padding:14px;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:1px;transition:all .25s var(--transition);box-shadow:0 4px 16px rgba(122,78,36,0.32)}
-  .btn-checkout:hover{background:linear-gradient(135deg,var(--rock-dark),var(--rock-mid));box-shadow:0 8px 24px rgba(74,46,20,0.42);transform:translateY(-1px)}
-  .btn-checkout:disabled{background:#ccc;box-shadow:none;cursor:not-allowed;transform:none}
-
-  /* 商品详情弹窗 */
-  .product-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:600;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
-  .product-modal-overlay.open{opacity:1;pointer-events:auto}
-  .product-modal{background:#fff;border-radius:20px;max-width:720px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 24px 80px rgba(0,0,0,0.22);transform:scale(0.94);transition:transform .3s cubic-bezier(.4,0,.2,1)}
-  .product-modal-overlay.open .product-modal{transform:scale(1)}
-  .pm-img{height:100%;min-height:320px;object-fit:cover;border-radius:20px 0 0 20px;width:100%;display:block}
-  .pm-body{padding:28px 28px 24px}
-  .pm-badge{display:inline-block;padding:4px 12px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:12px}
-  .pm-name{font-size:22px;font-weight:900;color:var(--text-primary);font-family:var(--serif);margin-bottom:10px;line-height:1.3}
-  .pm-desc{font-size:13.5px;color:var(--text-muted);line-height:1.9;margin-bottom:18px}
-  .pm-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:20px}
-  .pm-price{font-size:32px;font-weight:900;color:#b5451b}
-  .pm-price small{font-size:16px}
-  .pm-ori{font-size:14px;color:#ccc;text-decoration:line-through}
-  .pm-spec-label{font-size:12px;color:var(--text-light);margin-bottom:8px;font-weight:600}
-  .pm-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .pm-spec-btn{padding:6px 16px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:12.5px;cursor:pointer;transition:all .2s;color:var(--text-body)}
-  .pm-spec-btn.active{border-color:var(--rock-warm);background:rgba(160,104,48,0.08);color:var(--rock-warm);font-weight:700}
-  .pm-qty-row{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-  .pm-qty-label{font-size:12px;color:var(--text-light);font-weight:600}
-  .pm-actions{display:flex;flex-direction:column;gap:10px}
-  .pm-btn-cart{width:100%;padding:13px;border-radius:12px;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;border:none;font-size:14px;font-weight:700;cursor:pointer;transition:all .25s var(--transition);letter-spacing:0.5px}
-  .pm-btn-cart:hover{background:linear-gradient(135deg,var(--rock-dark),var(--rock-mid));transform:translateY(-1px);box-shadow:0 6px 18px rgba(74,46,20,0.34)}
-  .pm-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(255,255,255,0.9);border:none;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:background .2s}
-  .pm-close:hover{background:#fff}
-  .product-modal{position:relative}
-
-  /* 结算弹窗 */
-  .checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:700;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
-  .checkout-overlay.open{opacity:1;pointer-events:auto}
-  .checkout-modal{background:#fff;border-radius:20px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,0.22);transform:translateY(20px);transition:transform .3s cubic-bezier(.4,0,.2,1)}
-  .checkout-overlay.open .checkout-modal{transform:translateY(0)}
-  .checkout-title{font-size:20px;font-weight:900;color:var(--text-primary);font-family:var(--serif);margin-bottom:6px}
-  .checkout-sub{font-size:13px;color:var(--text-light);margin-bottom:24px}
-  .checkout-order-summary{background:var(--bg-1);border-radius:12px;padding:14px 16px;margin-bottom:22px}
-  .checkout-order-item{display:flex;justify-content:space-between;font-size:13px;color:var(--text-body);padding:4px 0}
-  .checkout-order-item.total{font-weight:800;font-size:15px;color:var(--text-primary);border-top:1px solid var(--border);padding-top:10px;margin-top:6px}
-  .checkout-order-item.total span:last-child{color:#b5451b}
-  .form-group{margin-bottom:16px}
-  .form-label{font-size:12.5px;font-weight:700;color:var(--text-muted);margin-bottom:6px;display:block}
-  .form-label span{color:#e53935}
-  .form-input,.form-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:var(--sans);color:var(--text-body);background:#fff;transition:border-color .2s;box-sizing:border-box;outline:none}
-  .form-input:focus,.form-textarea:focus{border-color:var(--rock-light)}
-  .form-textarea{resize:vertical;min-height:80px;line-height:1.6}
-  .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .checkout-note{font-size:12px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.7}
-  .btn-submit-order{width:100%;padding:14px;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:1px;transition:all .25s var(--transition);box-shadow:0 4px 16px rgba(122,78,36,0.32);margin-top:6px}
-  .btn-submit-order:hover{background:linear-gradient(135deg,var(--rock-dark),var(--rock-mid));transform:translateY(-1px);box-shadow:0 8px 24px rgba(74,46,20,0.42)}
-  .btn-submit-order:disabled{background:#ccc;box-shadow:none;cursor:not-allowed;transform:none}
-  .order-success{text-align:center;padding:20px 0}
-  .order-success .success-icon{font-size:56px;margin-bottom:16px}
-  .order-success h3{font-size:20px;font-weight:900;color:var(--text-primary);margin-bottom:10px;font-family:var(--serif)}
-  .order-success p{font-size:14px;color:var(--text-muted);line-height:1.8}
-  .checkout-close{position:absolute;top:16px;right:20px;background:var(--bg-2);border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s}
-  .checkout-close:hover{background:var(--bg-3)}
-  .checkout-modal{position:relative}
+  /* ===== 特产好物 ===== */
+  .goods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .goods-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:all .3s var(--transition);border:1px solid var(--border)}
+  .goods-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-warm)}
+  .goods-img{height:220px;overflow:hidden;position:relative}
+  .goods-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--transition)}
+  .goods-card:hover .goods-img img{transform:scale(1.08)}
+  .goods-body{padding:22px}
+  .goods-tag{display:inline-block;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;padding:4px 12px;border-radius:10px;font-size:11px;font-weight:700;letter-spacing:0.3px;margin-bottom:10px}
+  .goods-name{font-size:17px;font-weight:800;margin-bottom:10px;color:var(--text-primary);font-family:var(--serif)}
+  .goods-desc{font-size:13px;color:var(--text-muted);line-height:1.8}
+  @media(max-width:900px){
+    .goods-grid{grid-template-columns:repeat(2,1fr);gap:18px}
+    .goods-img{height:180px}
+    .goods-body{padding:16px}
+    .goods-name{font-size:15px}
+  }
+  @media(max-width:600px){
+    .goods-grid{grid-template-columns:1fr}
+  }
 
   /* 新闻详情模态框 */
-  #news-modal-overlay{position:fixed;inset:0;background:rgba(20,12,4,0.8);z-index:4000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(6px)}
-  #news-modal-overlay.open{opacity:1;pointer-events:auto}
-  .news-modal{background:#fff;border-radius:20px;max-width:900px;width:100%;max-height:90vh;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 32px 100px rgba(0,0,0,0.5);transform:scale(0.92);transition:transform .35s cubic-bezier(.4,0,.2,1);position:relative}
-  #news-modal-overlay.open .news-modal{transform:scale(1)}
-  .news-modal-img{height:100%;min-height:400px;object-fit:cover;display:block}
-  .news-modal-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .2s;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
-  .news-modal-close:hover{background:#fff;color:var(--text-primary);transform:scale(1.1)}
-  .news-modal-body{padding:36px 40px;overflow-y:auto;max-height:90vh}
-  .news-modal-cat{display:inline-block;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.5px;margin-bottom:16px;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;text-transform:uppercase}
-  .news-modal-title{font-size:26px;font-weight:900;color:var(--text-primary);font-family:var(--serif);margin-bottom:12px;line-height:1.3;letter-spacing:0.5px}
-  .news-modal-meta{font-size:13px;color:var(--text-muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-light);display:flex;gap:20px}
-  .news-modal-meta span{display:flex;align-items:center;gap:6px}
-  .news-modal-content{font-size:15px;color:var(--text-body);line-height:1.9}
-  .news-modal-content p{margin-bottom:18px}
+  .news-detail-modal{position:fixed;inset:0;background:rgba(20,12,4,0.85);z-index:4000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+  .news-detail-modal.active{display:flex}
+  .news-detail-content{background:#fff;border-radius:20px;max-width:1000px;width:100%;max-height:90vh;overflow:hidden;box-shadow:0 32px 100px rgba(0,0,0,0.5);position:relative;animation:newsDetailIn .4s cubic-bezier(.4,0,.2,1)}
+  @keyframes newsDetailIn{from{opacity:0;transform:scale(0.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+  .news-detail-grid{display:grid;grid-template-columns:1fr 1fr;min-height:500px}
+  .news-detail-image{height:100%;min-height:400px;overflow:hidden}
+  .news-detail-image img{width:100%;height:100%;object-fit:cover}
+  .news-detail-body{padding:32px 36px;overflow-y:auto;max-height:90vh}
+  .news-detail-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .2s;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+  .news-detail-close:hover{background:#fff;color:var(--text-primary);transform:scale(1.1) rotate(90deg)}
+  .news-detail-cat{display:inline-block;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.5px;margin-bottom:14px;background:linear-gradient(135deg,var(--rock-mid),var(--rock-warm));color:#fff;text-transform:uppercase}
+  .news-detail-body h2{font-size:24px;font-weight:900;color:var(--text-primary);font-family:var(--serif);margin-bottom:12px;line-height:1.3;letter-spacing:0.5px}
+  .news-detail-meta{font-size:13px;color:var(--text-muted);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border-light);display:flex;gap:20px}
+  .news-detail-meta span{display:flex;align-items:center;gap:6px}
+  .news-detail-text{font-size:14.5px;color:var(--text-body);line-height:1.85}
+  .news-detail-text p{margin-bottom:14px}
+  .news-detail-text h3{font-size:16px;font-weight:800;color:var(--text-primary);margin:20px 0 10px;font-family:var(--serif)}
+  .news-detail-text h4{font-size:14px;font-weight:700;color:var(--rock-mid);margin:14px 0 8px}
+  .news-detail-text ul{margin:10px 0 14px 18px}
+  .news-detail-text li{margin-bottom:6px}
+  @media(max-width:900px){
+    .news-detail-grid{grid-template-columns:1fr}
+    .news-detail-image{height:220px;min-height:auto}
+    .news-detail-body{padding:24px}
+    .news-detail-body h2{font-size:20px}
+  }
   .news-modal-content h3{font-size:18px;font-weight:800;color:var(--text-primary);margin:28px 0 16px;font-family:var(--serif)}
   .news-modal-content h4{font-size:15px;font-weight:700;color:var(--text-primary);margin:22px 0 12px}
   .news-modal-content ul,.news-modal-content ol{margin:16px 0;padding-left:24px;color:var(--text-body)}
@@ -1355,99 +1267,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <audio id="bg-music" preload="auto" loop></audio>
 
 <!-- 移动端菜单遮罩 -->
-<!-- 购物车悬浮按钮 -->
-<button class="cart-fab" id="cart-fab" title="购物车">
-  🛒
-  <span class="cart-badge" id="cart-badge">0</span>
-</button>
 
-<!-- 购物车抽屉 -->
-<div class="cart-drawer" id="cart-drawer">
-  <div class="cart-header">
-    <h3>🛒 我的购物车</h3>
-    <button class="cart-close" id="cart-close">✕</button>
-  </div>
-  <div class="cart-items" id="cart-items">
-    <div class="cart-empty">
-      <div class="empty-icon">🛍️</div>
-      <div>购物车还是空的<br>快去挑选浑源好物吧～</div>
-    </div>
-  </div>
-  <div class="cart-footer" id="cart-footer" style="display:none">
-    <div class="cart-total-row">
-      <span class="cart-total-label">合计：</span>
-      <span class="cart-total-price"><small>¥</small><span id="cart-total">0</span></span>
-    </div>
-    <button class="btn-checkout" id="btn-checkout">立即结算</button>
-  </div>
-</div>
 
-<!-- 商品详情弹窗 -->
-<div class="product-modal-overlay" id="product-modal-overlay">
-  <div class="product-modal" id="product-modal">
-    <button class="pm-close" id="pm-close">✕</button>
-    <img class="pm-img" id="pm-img" src="" alt="">
-    <div class="pm-body">
-      <span class="pm-badge p-hot" id="pm-badge"></span>
-      <div class="pm-name" id="pm-name"></div>
-      <div class="pm-desc" id="pm-desc"></div>
-      <div class="pm-price-row">
-        <span class="pm-price"><small>¥</small><span id="pm-price"></span></span>
-        <span class="pm-ori" id="pm-ori"></span>
-      </div>
-      <div class="pm-spec-label">规格选择</div>
-      <div class="pm-specs" id="pm-specs"></div>
-      <div class="pm-qty-row">
-        <span class="pm-qty-label">数量</span>
-        <div class="qty-ctrl">
-          <button class="qty-btn" id="pm-qty-minus">－</button>
-          <span class="qty-num" id="pm-qty-num">1</span>
-          <button class="qty-btn" id="pm-qty-plus">＋</button>
-        </div>
-      </div>
-      <div class="pm-actions">
-        <button class="pm-btn-cart" id="pm-add-cart">🛒 加入购物车</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 结算弹窗 -->
-<div class="checkout-overlay" id="checkout-overlay">
-  <div class="checkout-modal">
-    <button class="checkout-close" id="checkout-close">✕</button>
-    <div id="checkout-form-wrap">
-      <div class="checkout-title">确认订单</div>
-      <div class="checkout-sub">请填写收货信息，我们会尽快与您联系确认</div>
-      <div class="checkout-order-summary" id="checkout-summary"></div>
-      <div class="form-row-2">
-        <div class="form-group">
-          <label class="form-label">姓名 <span>*</span></label>
-          <input class="form-input" id="order-name" placeholder="收货人姓名" maxlength="20">
-        </div>
-        <div class="form-group">
-          <label class="form-label">手机号 <span>*</span></label>
-          <input class="form-input" id="order-phone" placeholder="11位手机号" maxlength="11" type="tel">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">收货地址 <span>*</span></label>
-        <input class="form-input" id="order-address" placeholder="省 / 市 / 区 / 详细地址" maxlength="100">
-      </div>
-      <div class="form-group">
-        <label class="form-label">备注</label>
-        <textarea class="form-textarea" id="order-note" placeholder="口味偏好、包装要求等（选填）"></textarea>
-      </div>
-      <button class="btn-submit-order" id="btn-submit-order">提交订单</button>
-      <div class="checkout-note">📱 提交后我们将在24小时内电话联系您确认订单及付款方式</div>
-    </div>
-    <div class="order-success" id="order-success" style="display:none">
-      <div class="success-icon">🎉</div>
-      <h3>订单提交成功！</h3>
-      <p>感谢您的购买，我们将在<strong>24小时内</strong>电话联系您<br>确认订单及付款方式<br><br>联系电话：<strong>0352-XXXXXXX</strong></p>
-    </div>
-  </div>
-</div>
 
 <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 
@@ -1466,8 +1287,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <button class="nav-btn">规划行程</button>
 </div>
 
-<!-- 顶部提示 -->
-<div class="top-bar">✦ 浑源特产正在热销中 · 黄芪礼盒限时八五折 &nbsp;<a href="#shop-section">立即选购 →</a></div>
+
 
 <!-- 导航 -->
 <header>
@@ -2030,11 +1850,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="news-cat">旅游攻略</span>
         </div>
         <div class="news-body">
-          <h3 class="news-title"><a href="#">恒山两日游完全攻略：最佳路线＋住宿＋美食清单</a></h3>
+          <h3 class="news-title">恒山两日游完全攻略：最佳路线+住宿+美食清单</h3>
           <p class="news-excerpt">从北京出发乘高铁至大同，再转车前往浑源，全程交通指引、住宿推荐、必吃美食一应俱全，让你的恒山之旅省时省钱又舒心...</p>
           <div class="news-footer">
             <div class="news-author"><div class="news-author-icon">✍️</div><span>浑源旅游局 · 2026-03-10</span></div>
-            <a href="#" class="news-read">阅读全文 →</a>
+            <a href="javascript:void(0)" class="news-read" onclick="openNewsDetail(1); return false;">阅读全文 →</a>
           </div>
         </div>
       </div>
@@ -2044,11 +1864,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="news-cat">历史人文</span>
         </div>
         <div class="news-body">
-          <h3 class="news-title"><a href="#">悬空寺：这座悬在崖壁上的寺庙如何屹立千年？</a></h3>
+          <h3 class="news-title">悬空寺：这座悬在崖壁上的寺庙如何屹立千年？</h3>
           <p class="news-excerpt">在没有水泥、没有钢筋的年代，古人如何完成这一工程奇迹？深入了解悬空寺的建筑智慧与千年历史...</p>
           <div class="news-footer">
             <div class="news-author"><div class="news-author-icon">📚</div><span>文化研究院 · 2026-03-05</span></div>
-            <a href="#" class="news-read">阅读全文 →</a>
+            <a href="javascript:void(0)" class="news-read" onclick="openNewsDetail(2); return false;">阅读全文 →</a>
           </div>
         </div>
       </div>
@@ -2058,11 +1878,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <span class="news-cat">特色美食</span>
         </div>
         <div class="news-body">
-          <h3 class="news-title"><a href="#">浑源凉粉到底有多好吃？本地人带你吃出花来</a></h3>
+          <h3 class="news-title">浑源凉粉到底有多好吃？本地人带你吃出花来</h3>
           <p class="news-excerpt">酸辣咸香，配料讲究，一碗正宗浑源凉粉少则七八种调料。本地人推荐的老店藏在哪条街巷？食谱全解析...</p>
           <div class="news-footer">
             <div class="news-author"><div class="news-author-icon">🍜</div><span>美食探店 · 2026-02-28</span></div>
-            <a href="#" class="news-read">阅读全文 →</a>
+            <a href="javascript:void(0)" class="news-read" onclick="openNewsDetail(3); return false;">阅读全文 →</a>
           </div>
         </div>
       </div>
@@ -2084,26 +1904,82 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 
-<!-- 特产商城 -->
+<!-- 特产好物 -->
 <section class="section section-bg" id="shop-section">
   <div class="container">
     <div class="sec-head anim-fade-up">
-      <span class="sec-tag">SPECIALTY STORE</span>
-      <h2 class="sec-title">浑源特产商城</h2>
-      <p class="sec-desc">地道好物，直邮到家，把浑源的味道带回去</p>
+      <span class="sec-tag">SPECIALTY GOODS</span>
+      <h2 class="sec-title">浑源特产好物</h2>
+      <p class="sec-desc">地道好物，匠心品质，把浑源的味道带回家</p>
     </div>
-    <!-- 分类筛选 -->
-    <div class="shop-filter" id="shop-filter">
-      <button class="shop-filter-btn active" data-cat="全部">全部</button>
-      <button class="shop-filter-btn" data-cat="黄芪">黄芪系列</button>
-      <button class="shop-filter-btn" data-cat="食品">特色食品</button>
-      <button class="shop-filter-btn" data-cat="茶叶">茶叶</button>
-      <button class="shop-filter-btn" data-cat="礼盒">礼盒套装</button>
-    </div>
-    <!-- 商品列表 -->
-    <div class="shop-grid" id="shop-grid"></div>
-    <div class="sec-more">
-      <a href="#" class="btn-outline" id="shop-more-btn">查看更多特产 →</a>
+    <!-- 特产展示 -->
+    <div class="goods-grid" id="goods-grid">
+      <!-- 浑源黄芪 -->
+      <div class="goods-card anim-fade-up d1">
+        <div class="goods-img">
+          <img src="images/product-herb.jpg" alt="浑源黄芪">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">道地药材</span>
+          <h3 class="goods-name">浑源正北芪</h3>
+          <p class="goods-desc">浑源是"中国黄芪之乡"，所产黄芪以根条粗长、粉性足、含糖量高著称，是补气养生的上等佳品。</p>
+        </div>
+      </div>
+      <!-- 浑源凉粉 -->
+      <div class="goods-card anim-fade-up d2">
+        <div class="goods-img">
+          <img src="images/product-food.jpg" alt="浑源凉粉">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">非遗美食</span>
+          <h3 class="goods-name">浑源凉粉</h3>
+          <p class="goods-desc">传承百年非遗技艺，爽滑筋道、酸辣开胃。配以秘制调料，是浑源最具代表性的地方小吃。</p>
+        </div>
+      </div>
+      <!-- 恒山苦荞 -->
+      <div class="goods-card anim-fade-up d3">
+        <div class="goods-img">
+          <img src="images/product-tea.jpg" alt="恒山苦荞">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">养生茶饮</span>
+          <h3 class="goods-name">恒山苦荞茶</h3>
+          <p class="goods-desc">生长于恒山高海拔地区，富含芦丁等营养成分，具有清热解毒、降三高的保健功效。</p>
+        </div>
+      </div>
+      <!-- 浑源老醋 -->
+      <div class="goods-card anim-fade-up d4">
+        <div class="goods-img">
+          <img src="images/food-oilcake.jpg" alt="浑源老醋">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">传统酿造</span>
+          <h3 class="goods-name">浑源老陈醋</h3>
+          <p class="goods-desc">采用传统固态发酵工艺，历经三年陈酿，酸香浓郁，是调味佐餐的上佳之选。</p>
+        </div>
+      </div>
+      <!-- 黄芪礼盒 -->
+      <div class="goods-card anim-fade-up d1">
+        <div class="goods-img">
+          <img src="images/product-gift.jpg" alt="黄芪礼盒">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">精美礼盒</span>
+          <h3 class="goods-name">浑源特产礼盒</h3>
+          <p class="goods-desc">精选浑源黄芪、苦荞茶、老醋等多种特产，精美包装，是馈赠亲友的佳品。</p>
+        </div>
+      </div>
+      <!-- 莜面 -->
+      <div class="goods-card anim-fade-up d2">
+        <div class="goods-img">
+          <img src="images/food-oat.jpg" alt="浑源莜面">
+        </div>
+        <div class="goods-body">
+          <span class="goods-tag">传统主食</span>
+          <h3 class="goods-name">浑源莜面</h3>
+          <p class="goods-desc">山西传统面食，营养丰富，可制作成莜面栲栳栳、莜面鱼鱼等多种美食。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2437,16 +2313,175 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 
 <!-- 规划行程弹窗 -->
-<!-- 新闻详情模态框 -->
-<div id="news-modal-overlay">
-  <div class="news-modal">
-    <button class="news-modal-close" id="news-modal-close">✕</button>
-    <img class="news-modal-img" id="news-modal-img" src="" alt="">
-    <div class="news-modal-body">
-      <span class="news-modal-cat" id="news-modal-cat"></span>
-      <h2 class="news-modal-title" id="news-modal-title"></h2>
-      <div class="news-modal-meta" id="news-modal-meta"></div>
-      <div class="news-modal-content" id="news-modal-content"></div>
+
+<!-- 新闻1详情模块 -->
+<div id="news-detail-1" class="news-detail-modal">
+  <div class="news-detail-content">
+    <button class="news-detail-close" onclick="closeNewsDetail(1)">✕</button>
+    <div class="news-detail-grid">
+      <div class="news-detail-image">
+        <img src="images/news-1.jpg" alt="恒山旅游攻略">
+      </div>
+      <div class="news-detail-body">
+        <span class="news-detail-cat">旅游攻略</span>
+        <h2>恒山两日游完全攻略：最佳路线+住宿+美食清单</h2>
+        <div class="news-detail-meta">
+          <span>👤 浑源旅游局</span>
+          <span>📅 2026-03-10</span>
+        </div>
+        <div class="news-detail-text">
+          <p><strong>从北京出发，两天一夜玩转北岳恒山，这份攻略让你的恒山之旅省时省钱又舒心！</strong></p>
+          
+          <h3>📌 第一天：恒山主峰+悬空寺</h3>
+          
+          <h4>上午：抵达浑源，前往悬空寺</h4>
+          <p>从北京南站乘坐高铁到大同南站（约1.5小时），再转乘大巴或打车前往浑源县（约1小时）。建议上午10点前抵达悬空寺，避开人流高峰。</p>
+          
+          <h4>中午：品尝浑源特色午餐</h4>
+          <p>推荐品尝<strong>浑源凉粉</strong>、<strong>刀削面</strong>、<strong>黄米糕</strong>等当地特色美食。悬空寺周边有多家农家乐和餐馆，人均消费30-50元。</p>
+          
+          <h4>下午：游览悬空寺</h4>
+          <p>悬空寺门票约130元，游览时间约2小时。建议请导游讲解，深入了解这座"空中楼阁"的建筑奇迹。寺内空间有限，需要排队攀登，建议穿舒适的鞋子。</p>
+          
+          <h4>傍晚：登山恒山主峰</h4>
+          <p>从悬空寺到恒山山门约20分钟车程。恒山门票约45元，索道上行70元、下行55元。建议傍晚时分登山，可欣赏日落时分的壮丽景色。</p>
+          
+          <h4>晚上：入住浑源县城</h4>
+          <p>推荐住宿：恒山宾馆（★★★，约280元/晚）、浑源大酒店（★★，约180元/晚）。县城内经济型酒店较多，价格在100-150元/晚。</p>
+          
+          <h3>📌 第二天：永安寺+民俗体验</h3>
+          
+          <h4>上午：游览永安寺</h4>
+          <p>永安寺门票约30元，寺内有精美的壁画和佛像，是了解佛教文化的好去处。游览时间约1.5小时。</p>
+          
+          <h4>中午：县城美食探索</h4>
+          <p>县城内有很多特色小吃店，可以尝试<strong>浑源油糕</strong>、<strong>莜面栲栳栳</strong>、<strong>浑源老醋泡黄豆</strong>等。</p>
+          
+          <h4>下午：购买特产，返程</h4>
+          <p>推荐购买浑源特产：<strong>正北芪</strong>（黄芪）、<strong>浑源老醋</strong>、<strong>苦荞茶</strong>、<strong>浑源凉粉调料包</strong>等。</p>
+          
+          <h3>💰 费用预算（2人）</h3>
+          <ul>
+            <li><strong>交通：</strong>高铁往返约600元，当地交通约200元</li>
+            <li><strong>门票：</strong>悬空寺130×2=260元，恒山45×2=90元，永安寺30×2=60元</li>
+            <li><strong>住宿：</strong>一晚约200-300元</li>
+            <li><strong>餐饮：</strong>约200-300元</li>
+            <li><strong>总计：</strong>约1550-1750元</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 新闻2详情模块 -->
+<div id="news-detail-2" class="news-detail-modal">
+  <div class="news-detail-content">
+    <button class="news-detail-close" onclick="closeNewsDetail(2)">✕</button>
+    <div class="news-detail-grid">
+      <div class="news-detail-image">
+        <img src="images/hero_xuankong.png" alt="悬空寺">
+      </div>
+      <div class="news-detail-body">
+        <span class="news-detail-cat">历史人文</span>
+        <h2>悬空寺：这座悬在崖壁上的寺庙如何屹立千年？</h2>
+        <div class="news-detail-meta">
+          <span>👤 文化研究院</span>
+          <span>📅 2026-03-05</span>
+        </div>
+        <div class="news-detail-text">
+          <p><strong>在没有水泥、没有钢筋的年代，古人如何完成这一工程奇迹？让我们深入了解悬空寺的建筑智慧与千年历史。</strong></p>
+          
+          <h3>🏛️ 建筑奇迹</h3>
+          <p>悬空寺位于山西省浑源县恒山金龙峡西侧翠屏峰的峭壁间，始建于北魏晚期（约公元491年），距今已有1500多年历史。整座寺庙悬于半空，下临深谷，上托危崖，被誉为"空中楼阁"。</p>
+          
+          <h3>🔨 建造技术</h3>
+          <h4>巧妙的地形利用</h4>
+          <p>悬空寺选址巧妙，利用了翠屏峰的天然凹陷，寺顶距山顶90米，寺底距谷底50米，形成天然的避风处。</p>
+          
+          <h4>独特的支撑结构</h4>
+          <p>整座寺庙由40间殿宇组成，全部支撑在27根横梁上。这些横梁插入岩石中的深度达数米，形成了稳固的悬臂结构。</p>
+          
+          <h4>精巧的榫卯工艺</h4>
+          <p>悬空寺全部采用榫卯结构连接，没有使用一颗铁钉。木材之间的榫卯连接紧密，抗震性能优异。</p>
+          
+          <h3>📜 历史沿革</h3>
+          <h4>北魏始建</h4>
+          <p>悬空寺由北魏高僧昙鸾法师主持建造，初名"玄空阁"，取道教"玄空"之意。</p>
+          
+          <h4>金代扩建</h4>
+          <p>金代时期，悬空寺进行了大规模扩建，增加了许多殿宇和佛像，形成了现在的规模。</p>
+          
+          <h4>明清重修</h4>
+          <p>明清时期，悬空寺多次进行修缮，保持了建筑的原貌。1982年，悬空寺被列为全国重点文物保护单位。</p>
+          
+          <h3>🎨 文化价值</h3>
+          <p>悬空寺融合了儒、释、道三教文化，寺内供奉着孔子、老子、释迦牟尼等三教始祖的塑像。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 新闻3详情模块 -->
+<div id="news-detail-3" class="news-detail-modal">
+  <div class="news-detail-content">
+    <button class="news-detail-close" onclick="closeNewsDetail(3)">✕</button>
+    <div class="news-detail-grid">
+      <div class="news-detail-image">
+        <img src="images/food-noodle.jpg" alt="浑源凉粉">
+      </div>
+      <div class="news-detail-body">
+        <span class="news-detail-cat">特色美食</span>
+        <h2>浑源凉粉到底有多好吃？本地人带你吃出花来</h2>
+        <div class="news-detail-meta">
+          <span>👤 美食探店</span>
+          <span>📅 2026-02-28</span>
+        </div>
+        <div class="news-detail-text">
+          <p><strong>酸辣咸香，配料讲究，一碗正宗浑源凉粉少则七八种调料。本地人推荐的老店藏在哪条街巷？食谱全解析！</strong></p>
+          
+          <h3>🍜 浑源凉粉的特色</h3>
+          <p>浑源凉粉是山西省浑源县的特色小吃，以其爽滑筋道、酸辣开胃的独特风味而闻名。与普通凉粉不同，浑源凉粉的配料丰富，制作工艺独特。</p>
+          
+          <h3>📝 正宗配方</h3>
+          <h4>主料：</h4>
+          <ul>
+            <li>土豆淀粉 500克</li>
+            <li>水 2000毫升</li>
+          </ul>
+          
+          <h4>调料：</h4>
+          <ul>
+            <li>葱花、陈醋、生抽、辣椒油、秘制调料汁</li>
+          </ul>
+          
+          <h4>配菜：</h4>
+          <ul>
+            <li>黄瓜丝、胡萝卜丝、豆芽菜</li>
+            <li>油炸蚕豆、香菜、特色熏鸡蛋、本地豆腐干</li>
+          </ul>
+          
+          <h3>👨‍🍳 制作步骤</h3>
+          <p><strong>第一步：</strong>将土豆淀粉与水按1:4的比例混合，搅拌均匀至无颗粒。倒入锅中，用中小火不停搅拌，煮至浓稠透明。倒入容器中冷却成型，切成条状。</p>
+          
+          <p><strong>第二步：</strong>将大葱切成葱花，与香醋、生抽混合调匀。将秘制料汁调开。</p>
+          
+          <p><strong>第三步：</strong>黄瓜、胡萝卜、香菜、豆腐干切好备用。</p>
+          
+          <p><strong>第四步：</strong>将凉粉条盛入碗中，依次加入调料，最后撒上配菜即可。</p>
+          
+          <h3>📍 本地人推荐老店</h3>
+          <h4>1. 张三凉粉店</h4>
+          <p>位于县城东街，老字号，本地人常去的凉粉店。凉粉筋道，调料正宗，人均15元。</p>
+          
+          <h4>2. 浑源大龙凉粉</h4>
+          <p>位于西关街旁，以其秘制辣椒油闻名。凉粉爽滑，配菜丰富，人均18元。</p>
+          
+          <h4>3. 小媳妇凉粉</h4>
+          <p>位于县城中心，环境较好，适合游客。凉粉量大，服务周到，人均20元。</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2539,7 +2574,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 新闻数据（全局变量）
 const NEWS_ARTICLES = {
   news1: {
-    title: '恒山两日游完全攻略：最佳路线＋住宿＋美食清单',
+    title: '恒山两日游完全攻略：最佳路线+住宿+美食清单',
     category: '旅游攻略',
     image: 'images/news-1.jpg',
     author: '浑源旅游局',
@@ -2667,23 +2702,13 @@ const NEWS_ARTICLES = {
       
       <h4>调料：</h4>
       <ul>
-        <li>大蒜 5瓣</li>
-        <li>香醋 50毫升</li>
-        <li>生抽 30毫升</li>
-        <li>辣椒油 适量</li>
-        <li>芝麻酱 30克</li>
-        <li>韭菜花酱 20克</li>
-        <li>香油 少许</li>
-        <li>盐、鸡精 适量</li>
+        <li>葱花、陈醋、生抽、辣椒油、秘制调料汁</li>
       </ul>
       
       <h4>配菜：</h4>
       <ul>
-        <li>黄瓜丝 50克</li>
-        <li>胡萝卜丝 30克</li>
-        <li>豆芽菜 50克</li>
-        <li>油炸花生米 20克</li>
-        <li>香菜 适量</li>
+        <li>黄瓜丝、胡萝卜丝、豆芽菜</li>
+        <li>油炸蚕豆、香菜、特色熏鸡蛋、本地豆腐干</li>
       </ul>
       
       <h3>👨‍🍳 制作步骤</h3>
@@ -2691,23 +2716,23 @@ const NEWS_ARTICLES = {
       <p>将土豆淀粉与水按1:4的比例混合，搅拌均匀至无颗粒。倒入锅中，用中小火不停搅拌，煮至浓稠透明。倒入容器中冷却成型，切成条状。</p>
       
       <h4>第二步：调制调料</h4>
-      <p>将大蒜捣成蒜泥，与香醋、生抽、盐、鸡精混合调匀。另外将芝麻酱用香油调开，韭菜花酱和辣椒油准备好。</p>
+      <p>将大葱切成葱花，与香醋、生抽混合调匀。将秘制料汁调开。</p>
       
       <h4>第三步：准备配菜</h4>
-      <p>黄瓜、胡萝卜切成细丝，豆芽菜焯水备用，油炸花生米拍碎，香菜切段。</p>
+      <p>黄瓜、胡萝卜、香菜、豆腐干切好备用。</p>
       
       <h4>第四步：组装完成</h4>
-      <p>将凉粉条盛入碗中，依次加入蒜醋汁、芝麻酱、韭菜花酱、辣椒油，最后撒上配菜即可。</p>
+      <p>将凉粉条盛入碗中，依次加入调料，最后撒上配菜即可。</p>
       
       <h3>📍 本地人推荐老店</h3>
-      <h4>1. 老李凉粉店</h4>
-      <p>位于县城东街，开业50年，本地人常去的凉粉店。凉粉筋道，调料正宗，人均15元。</p>
+      <h4>1. 张三凉粉店</h4>
+      <p>位于县城东街，老字号，本地人常去的凉粉店。凉粉筋道，调料正宗，人均15元。</p>
       
-      <h4>2. 浑源第一家凉粉</h4>
-      <p>位于南门市场旁，以其秘制辣椒油闻名。凉粉爽滑，配菜丰富，人均18元。</p>
+      <h4>2. 浑源大龙凉粉</h4>
+      <p>位于西关街旁，以其秘制辣椒油闻名。凉粉爽滑，配菜丰富，人均18元。</p>
       
-      <h4>3. 王记凉粉铺</h4>
-      <p>位于县城中心广场，环境较好，适合游客。凉粉量大，服务周到，人均20元。</p>
+      <h4>3. 小媳妇凉粉</h4>
+      <p>位于县城中心，环境较好，适合游客。凉粉量大，服务周到，人均20元。</p>
       
       <h3>💡 美食小贴士</h3>
       <ul>
@@ -2752,6 +2777,10 @@ function toggleXuankongDetail(e){
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const href = a.getAttribute('href');
+      // 跳过新闻相关的链接(由新闻模态框单独处理)
+      if (a.classList.contains('news-read') || a.closest('.news-title')) {
+        return;
+      }
       if (href === '#') { e.preventDefault(); return; }
       const target = document.querySelector(href);
       if (target) {
@@ -2904,333 +2933,8 @@ function toggleXuankongDetail(e){
     if(e.key==='ArrowRight') document.getElementById('lightbox-next').click();
   });
 
-  /* ── 8. 特产商城 ── */
-  (function() {
-    /* 商品数据 */
-    const PRODUCTS = [
-      { id: 'p1', name: '浑源正北芪 · 精选礼盒', cat: '黄芪', badge: '热销No.1', badgeClass: 'p-hot',
-        image: 'images/product-herb.jpg', price: 168, ori: 220,
-        desc: '山西浑源道地黄芪，补气佳品，500g真空包装，产地直发，品质保证。黄芪多糖含量高，是滋补佳品。',
-        specs: ['250g装', '500g装', '1000g装'] },
-      { id: 'p2', name: '浑源凉粉 · 家庭装', cat: '食品', badge: '非遗推荐', badgeClass: 'p-recommend',
-        image: 'images/product-food.jpg', price: 39, ori: null,
-        desc: '非遗技艺制作，附赠秘制调料包，在家即可复刻正宗浑源凉粉的独特风味。',
-        specs: ['单人装×2', '家庭装×4', '团购装×8'] },
-      { id: 'p3', name: '恒山苦荞茶 · 有机装', cat: '茶叶', badge: '有机认证', badgeClass: 'p-organic',
-        image: 'images/product-tea.jpg', price: 58, ori: 78,
-        desc: '高海拔有机苦荞，清热解毒，降血糖血脂，250g精美盒装，送礼佳品。',
-        specs: ['125g盒装', '250g盒装', '500g袋装'] },
-      { id: 'p4', name: '浑源特色礼盒 · 旅游版', cat: '礼盒', badge: '新品上市', badgeClass: 'p-new',
-        image: 'images/product-food.jpg', price: 128, ori: 165,
-        desc: '精选浑源五种特产：黄芪、凉粉、苦荞茶、莜面、醋，精美礼盒包装，送礼自用两相宜。',
-        specs: ['标准版', '豪华版'] },
-      { id: 'p5', name: '黄芪蜂蜜 · 恒山野蜜', cat: '黄芪', badge: '限量供应', badgeClass: 'p-hot',
-        image: 'images/product-tea.jpg', price: 88, ori: 120,
-        desc: '恒山野生蜜蜂酿造，配合道地黄芪，补气养血，口感醇厚，纯天然无添加。',
-        specs: ['250ml', '500ml'] },
-      { id: 'p6', name: '浑源老醋 · 手工陈酿', cat: '食品', badge: '手工酿造', badgeClass: 'p-recommend',
-        image: 'images/product-food.jpg', price: 45, ori: null,
-        desc: '传统手工酿造山西老陈醋，酸香浓郁，色泽棕红，陈酿3年，调味首选。',
-        specs: ['500ml', '1000ml'] },
-      { id: 'p7', name: '恒山黄芪片 · 药用级', cat: '黄芪', badge: '药用级', badgeClass: 'p-organic',
-        image: 'images/product-herb.jpg', price: 98, ori: 138,
-        desc: '精选6年以上黄芪根，切片晒干，有效成分保留完整，适合煲汤、泡茶、入药。',
-        specs: ['100g', '250g', '500g'] },
-      { id: 'p8', name: '浑源四宝礼盒 · 年节版', cat: '礼盒', badge: '年节必备', badgeClass: 'p-new',
-        image: 'images/product-food.jpg', price: 198, ori: 260,
-        desc: '黄芪+老醋+苦荞茶+凉粉四合一礼盒，精美包装，节日送礼体面大方。',
-        specs: ['标准款', '精装款'] },
-    ];
-
-    let cart = []; // [{...product, spec, qty}]
-    let currentProduct = null;
-    let pmQty = 1;
-
-    /* ── 渲染商品列表 ── */
-    function renderProducts(cat) {
-      const grid = document.getElementById('shop-grid');
-      const list = cat === '全部' ? PRODUCTS : PRODUCTS.filter(p => p.cat === cat);
-      grid.innerHTML = list.map((p, i) => `
-        <div class="product anim-fade-up d${(i%4)+1}" data-id="${p.id}">
-          <div class="product-cover">
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
-            <span class="p-badge ${p.badgeClass}">${p.badge}</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">${p.name}</div>
-            <div class="product-desc">${p.desc.substring(0, 40)}…</div>
-            <div class="product-foot">
-              <div class="price-wrap">
-                <span class="price"><small>¥</small>${p.price}</span>
-                ${p.ori ? `<span class="ori">¥${p.ori}</span>` : ''}
-              </div>
-              <button class="btn-cart" data-id="${p.id}">加入购物车</button>
-            </div>
-          </div>
-        </div>`).join('');
-
-      // 商品卡片点击 → 详情弹窗
-      grid.querySelectorAll('.product').forEach(card => {
-        card.addEventListener('click', e => {
-          if (e.target.classList.contains('btn-cart')) return;
-          openProductModal(card.dataset.id);
-        });
-      });
-
-      // 加入购物车按钮
-      grid.querySelectorAll('.btn-cart').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.stopPropagation();
-          const p = PRODUCTS.find(x => x.id === btn.dataset.id);
-          addToCart(p, p.specs[0], 1);
-          btn.textContent = '✓ 已加入';
-          btn.classList.add('added');
-          setTimeout(() => { btn.textContent = '加入购物车'; btn.classList.remove('added'); }, 1800);
-        });
-      });
-
-      // 触发滚动动效
-      grid.querySelectorAll('.anim-fade-up').forEach(el => observer.observe(el));
-    }
-
-    /* ── 分类筛选 ── */
-    document.querySelectorAll('.shop-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.shop-filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderProducts(btn.dataset.cat);
-      });
-    });
-
-    /* ── 商品详情弹窗 ── */
-    function openProductModal(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      if (!p) return;
-      currentProduct = p;
-      pmQty = 1;
-      document.getElementById('pm-img').src = p.image;
-      document.getElementById('pm-img').alt = p.name;
-      const badge = document.getElementById('pm-badge');
-      badge.textContent = p.badge;
-      badge.className = 'pm-badge ' + p.badgeClass;
-      document.getElementById('pm-name').textContent = p.name;
-      document.getElementById('pm-desc').textContent = p.desc;
-      document.getElementById('pm-price').textContent = p.price;
-      const oriEl = document.getElementById('pm-ori');
-      oriEl.textContent = p.ori ? '¥' + p.ori : '';
-      document.getElementById('pm-qty-num').textContent = 1;
-      // 规格
-      const specsEl = document.getElementById('pm-specs');
-      specsEl.innerHTML = p.specs.map((s, i) =>
-        `<button class="pm-spec-btn${i===0?' active':''}" data-spec="${s}">${s}</button>`
-      ).join('');
-      specsEl.querySelectorAll('.pm-spec-btn').forEach(b => {
-        b.addEventListener('click', () => {
-          specsEl.querySelectorAll('.pm-spec-btn').forEach(x => x.classList.remove('active'));
-          b.classList.add('active');
-        });
-      });
-      document.getElementById('product-modal-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    document.getElementById('pm-close').addEventListener('click', closeProductModal);
-    document.getElementById('product-modal-overlay').addEventListener('click', e => {
-      if (e.target === document.getElementById('product-modal-overlay')) closeProductModal();
-    });
-    function closeProductModal() {
-      document.getElementById('product-modal-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('pm-qty-minus').addEventListener('click', () => {
-      if (pmQty > 1) { pmQty--; document.getElementById('pm-qty-num').textContent = pmQty; }
-    });
-    document.getElementById('pm-qty-plus').addEventListener('click', () => {
-      if (pmQty < 99) { pmQty++; document.getElementById('pm-qty-num').textContent = pmQty; }
-    });
-
-    document.getElementById('pm-add-cart').addEventListener('click', () => {
-      const spec = document.querySelector('#pm-specs .pm-spec-btn.active')?.dataset.spec || currentProduct.specs[0];
-      addToCart(currentProduct, spec, pmQty);
-      const btn = document.getElementById('pm-add-cart');
-      btn.textContent = '✓ 已加入购物车';
-      btn.style.background = 'linear-gradient(135deg,#3d6b28,#5a9e3a)';
-      setTimeout(() => {
-        btn.textContent = '🛒 加入购物车';
-        btn.style.background = '';
-        closeProductModal();
-        openCart();
-      }, 800);
-    });
-
-    /* ── 购物车 ── */
-    function addToCart(p, spec, qty) {
-      const key = p.id + '|' + spec;
-      const exist = cart.find(x => x.key === key);
-      if (exist) { exist.qty += qty; }
-      else { cart.push({ key, id: p.id, name: p.name, image: p.image, price: p.price, spec, qty }); }
-      updateCartUI();
-    }
-
-    function updateCartUI() {
-      const total = cart.reduce((s, x) => s + x.qty, 0);
-      const badge = document.getElementById('cart-badge');
-      const fab = document.getElementById('cart-fab');
-      if (total > 0) {
-        badge.textContent = total > 99 ? '99+' : total;
-        badge.style.display = 'flex';
-        fab.style.display = 'flex';
-      } else {
-        badge.style.display = 'none';
-      }
-
-      const itemsEl = document.getElementById('cart-items');
-      const footerEl = document.getElementById('cart-footer');
-
-      if (cart.length === 0) {
-        itemsEl.innerHTML = `<div class="cart-empty"><div class="empty-icon">🛍️</div><div>购物车还是空的<br>快去挑选浑源好物吧～</div></div>`;
-        footerEl.style.display = 'none';
-        return;
-      }
-
-      footerEl.style.display = 'block';
-      itemsEl.innerHTML = cart.map(item => `
-        <div class="cart-item" data-key="${item.key}">
-          <img class="cart-item-img" src="${item.image}" alt="${item.name}">
-          <div class="cart-item-info">
-            <div class="cart-item-name">${item.name}</div>
-            <div class="cart-item-spec">${item.spec}</div>
-            <div class="cart-item-row">
-              <span class="cart-item-price">¥${(item.price * item.qty).toFixed(0)}</span>
-              <div style="display:flex;align-items:center;gap:8px">
-                <div class="qty-ctrl">
-                  <button class="qty-btn cart-minus" data-key="${item.key}">－</button>
-                  <span class="qty-num">${item.qty}</span>
-                  <button class="qty-btn cart-plus" data-key="${item.key}">＋</button>
-                </div>
-                <button class="cart-item-del" data-key="${item.key}">🗑</button>
-              </div>
-            </div>
-          </div>
-        </div>`).join('');
-
-      // 数量按钮
-      itemsEl.querySelectorAll('.cart-minus').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const item = cart.find(x => x.key === btn.dataset.key);
-          if (item) { item.qty--; if (item.qty <= 0) cart = cart.filter(x => x.key !== btn.dataset.key); }
-          updateCartUI();
-        });
-      });
-      itemsEl.querySelectorAll('.cart-plus').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const item = cart.find(x => x.key === btn.dataset.key);
-          if (item && item.qty < 99) item.qty++;
-          updateCartUI();
-        });
-      });
-      itemsEl.querySelectorAll('.cart-item-del').forEach(btn => {
-        btn.addEventListener('click', () => {
-          cart = cart.filter(x => x.key !== btn.dataset.key);
-          updateCartUI();
-        });
-      });
-
-      const totalPrice = cart.reduce((s, x) => s + x.price * x.qty, 0);
-      document.getElementById('cart-total').textContent = totalPrice.toFixed(0);
-    }
-
-    function openCart() {
-      document.getElementById('cart-drawer').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeCart() {
-      document.getElementById('cart-drawer').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('cart-fab').addEventListener('click', openCart);
-    document.getElementById('cart-close').addEventListener('click', closeCart);
-
-    /* ── 结算 ── */
-    document.getElementById('btn-checkout').addEventListener('click', () => {
-      closeCart();
-      openCheckout();
-    });
-
-    function openCheckout() {
-      // 生成订单摘要
-      const summaryEl = document.getElementById('checkout-summary');
-      summaryEl.innerHTML = cart.map(item =>
-        `<div class="checkout-order-item"><span>${item.name}（${item.spec}）×${item.qty}</span><span>¥${(item.price*item.qty).toFixed(0)}</span></div>`
-      ).join('') +
-      `<div class="checkout-order-item total"><span>合计</span><span>¥${cart.reduce((s,x)=>s+x.price*x.qty,0).toFixed(0)}</span></div>`;
-
-      document.getElementById('checkout-form-wrap').style.display = 'block';
-      document.getElementById('order-success').style.display = 'none';
-      document.getElementById('checkout-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    document.getElementById('checkout-close').addEventListener('click', () => {
-      document.getElementById('checkout-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    });
-    document.getElementById('checkout-overlay').addEventListener('click', e => {
-      if (e.target === document.getElementById('checkout-overlay')) {
-        document.getElementById('checkout-overlay').classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
-
-    /* ── 提交订单 ── */
-    document.getElementById('btn-submit-order').addEventListener('click', async () => {
-      const name = document.getElementById('order-name').value.trim();
-      const phone = document.getElementById('order-phone').value.trim();
-      const address = document.getElementById('order-address').value.trim();
-      const note = document.getElementById('order-note').value.trim();
-
-      if (!name) { alert('请填写收货人姓名'); return; }
-      if (!/^1[3-9]\d{9}$/.test(phone)) { alert('请填写正确的手机号'); return; }
-      if (!address) { alert('请填写收货地址'); return; }
-
-      const btn = document.getElementById('btn-submit-order');
-      btn.disabled = true;
-      btn.textContent = '提交中…';
-
-      const orderData = {
-        name, phone, address, note,
-        items: cart.map(x => ({ name: x.name, spec: x.spec, qty: x.qty, price: x.price })),
-        total: cart.reduce((s, x) => s + x.price * x.qty, 0),
-        createdAt: new Date().toISOString(),
-        status: '待确认'
-      };
-
-      // 尝试提交到 CloudBase（如果可用），否则静默成功
-      try {
-        if (typeof cloudbase !== 'undefined') {
-          const app = cloudbase.init({ env: 'xks8-7gsvj7re6b131893' });
-          const auth = app.auth({ persistence: 'local' });
-          if (!(await auth.getLoginState())) await auth.anonymousAuthProvider().signIn();
-          await app.database().collection('orders').add(orderData);
-        }
-      } catch(e) { console.warn('订单云端存储失败，仅本地记录:', e.message); }
-
-      // 无论云端是否成功，都显示成功页面
-      cart = [];
-      updateCartUI();
-      btn.disabled = false;
-      btn.textContent = '提交订单';
-      document.getElementById('checkout-form-wrap').style.display = 'none';
-      document.getElementById('order-success').style.display = 'block';
-    });
-
-    /* ── 初始渲染 ── */
-    renderProducts('全部');
-    updateCartUI();
-    document.getElementById('shop-more-btn').addEventListener('click', e => e.preventDefault());
-  })();
+  /* ── 8. 特产好物展示（纯展示，无购物车功能）── */
+  // 特产好物区域已改为静态展示，无需JavaScript交互
 
 
 
@@ -3837,118 +3541,34 @@ function toggleXuankongDetail(e){
     autoTargets.forEach(el=> autoObs.observe(el));
   })();
 
-  /* ── 新闻详情模态框控制 ── */
-  (function(){
-    console.log('新闻模态框模块初始化...');
-
-    const newsModalOverlay = document.getElementById('news-modal-overlay');
-    const newsModalClose = document.getElementById('news-modal-close');
-    const newsModalImg = document.getElementById('news-modal-img');
-    const newsModalCat = document.getElementById('news-modal-cat');
-    const newsModalTitle = document.getElementById('news-modal-title');
-    const newsModalMeta = document.getElementById('news-modal-meta');
-    const newsModalContent = document.getElementById('news-modal-content');
-
-    console.log('新闻模态框元素:', {
-      overlay: newsModalOverlay,
-      close: newsModalClose,
-      img: newsModalImg,
-      cat: newsModalCat,
-      title: newsModalTitle,
-      meta: newsModalMeta,
-      content: newsModalContent
-    });
-
-    function openNewsModal(articleId) {
-      console.log('打开新闻模态框，文章ID:', articleId);
-      const article = NEWS_ARTICLES[articleId];
-      if (!article) {
-        console.error('文章不存在:', articleId);
-        return;
-      }
-
-      newsModalImg.src = article.image;
-      newsModalCat.textContent = article.category;
-      newsModalTitle.textContent = article.title;
-      newsModalMeta.innerHTML = `<span>👤 ${article.author}</span><span>📅 ${article.date}</span>`;
-      newsModalContent.innerHTML = article.content;
-
-      newsModalOverlay.classList.add('open');
+  /* ── 新闻详情模态框控制（简单版本）── */
+  // 打开新闻详情
+  window.openNewsDetail = function(id) {
+    const modal = document.getElementById('news-detail-' + id);
+    if (modal) {
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      console.log('新闻模态框已打开');
     }
-
-    function closeNewsModal() {
-      console.log('关闭新闻模态框');
-      newsModalOverlay.classList.remove('open');
+  };
+  
+  // 关闭新闻详情
+  window.closeNewsDetail = function(id) {
+    const modal = document.getElementById('news-detail-' + id);
+    if (modal) {
+      modal.classList.remove('active');
       document.body.style.overflow = '';
     }
-
-    // 为所有"阅读全文"按钮添加点击事件
-    const readButtons = document.querySelectorAll('.news-read');
-    console.log('找到"阅读全文"按钮数量:', readButtons.length);
-
-    readButtons.forEach((btn, i) => {
-      btn.addEventListener('click', e => {
-        console.log('阅读全文按钮被点击 (索引:', i, ')');
-        e.preventDefault();
-        e.stopPropagation();
-        const card = e.target.closest('.news-card');
-        if (!card) {
-          console.error('找不到新闻卡片');
-          return;
-        }
-
-        const cards = document.querySelectorAll('.news-card');
-        const index = Array.from(cards).indexOf(card);
-        const articleIds = ['news1', 'news2', 'news3'];
-
-        console.log('卡片索引:', index, '文章ID:', articleIds[index]);
-        if (index >= 0 && index < articleIds.length) {
-          openNewsModal(articleIds[index]);
-        }
+  };
+  
+  // ESC键关闭所有新闻详情
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.news-detail-modal.active').forEach(modal => {
+        modal.classList.remove('active');
       });
-    });
-
-    // 为新闻标题链接也添加点击事件
-    const titleLinks = document.querySelectorAll('.news-title a');
-    console.log('找到新闻标题链接数量:', titleLinks.length);
-
-    titleLinks.forEach((link, i) => {
-      link.addEventListener('click', e => {
-        console.log('新闻标题被点击 (索引:', i, ')');
-        e.preventDefault();
-        e.stopPropagation();
-        const card = e.target.closest('.news-card');
-        if (!card) {
-          console.error('找不到新闻卡片');
-          return;
-        }
-
-        const cards = document.querySelectorAll('.news-card');
-        const index = Array.from(cards).indexOf(card);
-        const articleIds = ['news1', 'news2', 'news3'];
-
-        console.log('卡片索引:', index, '文章ID:', articleIds[index]);
-        if (index >= 0 && index < articleIds.length) {
-          openNewsModal(articleIds[index]);
-        }
-      });
-    });
-
-    // 关闭按钮事件
-    newsModalClose.addEventListener('click', closeNewsModal);
-    newsModalOverlay.addEventListener('click', e => {
-      if (e.target === newsModalOverlay) closeNewsModal();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && newsModalOverlay.classList.contains('open')) {
-        closeNewsModal();
-      }
-    });
-
-    console.log('新闻模态框模块初始化完成');
-  })();
+      document.body.style.overflow = '';
+    }
+  });
 
 })();
 </script>
