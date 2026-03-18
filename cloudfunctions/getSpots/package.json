@@ -1,0 +1,12 @@
+{
+  "name": "getSpots",
+  "version": "1.0.0",
+  "description": "获取浑源景点列表，以管理员身份读取数据库",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "latest"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
